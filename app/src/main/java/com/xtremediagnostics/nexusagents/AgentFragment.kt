@@ -70,6 +70,7 @@ class AgentFragment : Fragment() {
         setupZoomControls(v)
         setupNotesButton(v)
         setupCopyPaste(v)
+        setupReloadButton(v)
         setupSessionChips()
         switchToSession(sessionManager.sessions[0].id, false)
         return v
@@ -305,15 +306,8 @@ class AgentFragment : Fragment() {
             }
             webChromeClient = WebChromeClient()
 
-            // Restaurar estado guardado o cargar URL
-            val savedState = webViewStates.remove(sid)
-            if (savedState != null) {
-                restoreState(savedState)
-                // Forzar recarga para asegurar conexión fresca
-                postDelayed({ reload() }, 500)
-            } else {
-                loadUrl(agent.url)
-            }
+            // Cargar URL directamente (sin restoreState problemático)
+            loadUrl(agent.url)
         }
         webViewContainer?.addView(wv)
         return wv
@@ -324,23 +318,26 @@ class AgentFragment : Fragment() {
             (function(){
                 if(window.__nexusReconnect) return;
                 window.__nexusReconnect = true;
+                var reloading = false;
+                function doReload(){ if(!reloading){ reloading=true; setTimeout(function(){ location.reload(); }, 500); } }
                 var origWS = window.WebSocket;
                 window.WebSocket = function(){
                     var ws = new origWS.apply(this, arguments);
-                    ws.addEventListener('close', function(){
-                        console.log('[Nexus] WebSocket closed — reloading...');
-                        NexusBridge.onDisconnect();
-                    });
-                    ws.addEventListener('error', function(){
-                        setTimeout(function(){ location.reload(); }, 2000);
-                    });
+                    ws.addEventListener('close', function(){ console.log('[Nexus] WS closed'); doReload(); });
+                    ws.addEventListener('error', function(){ console.log('[Nexus] WS error'); doReload(); });
                     return ws;
                 };
+                // Health check: si la pagina esta en blanco, recargar
                 setInterval(function(){
-                    if(document.body && !document.body.innerHTML.match(/cloudflared|ttyd|terminal/i)){
-                        NexusBridge.onDisconnect();
+                    if(document.body && !document.body.innerHTML.match(/cloudflared|ttyd|terminal|ws|iframe/i)){
+                        doReload();
                     }
-                }, 15000);
+                }, 10000);
+                // Si hay error 502/503 de cloudflare, recargar
+                setInterval(function(){
+                    var txt = document.body.innerText||'';
+                    if(txt.match(/bad gateway|cloudflare|error 5\\d\\d/i)){ doReload(); }
+                }, 8000);
             })();
         """.trimIndent(), null)
     }
@@ -401,7 +398,14 @@ class AgentFragment : Fragment() {
     // =====================================================================
     // PUBLIC
     // =====================================================================
-    fun reloadCurrentSession() = webViewCache[currentSessionId]?.reload()
+    private fun setupReloadButton(root: View) {
+        root.findViewById<ImageButton>(R.id.btnReload)?.setOnClickListener { reloadCurrentSession() }
+    }
+
+    fun reloadCurrentSession() {
+        webViewCache[currentSessionId]?.reload()
+        Toast.makeText(requireContext(), "Recargando...", Toast.LENGTH_SHORT).show()
+    }
     fun getSessionCount() = sessionManager.size
     fun getAgent() = agent
 

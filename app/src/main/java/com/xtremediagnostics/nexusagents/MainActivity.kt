@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Rational
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -85,7 +86,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun reloadCurrentFragment() {
         val frag = supportFragmentManager.findFragmentByTag("f${viewPager.currentItem}")
-        if (frag is AgentFragment) frag.reloadCurrentSession()
+        when (frag) {
+            is AgentFragment -> frag.reloadCurrentSession()
+            is DashboardFragment -> {
+                Toast.makeText(this, "Refrescando dashboard...", Toast.LENGTH_SHORT).show()
+                supportFragmentManager.beginTransaction().detach(frag).attach(frag).commit()
+            }
+            is CommitsFragment -> {
+                Toast.makeText(this, "Refrescando commits...", Toast.LENGTH_SHORT).show()
+                supportFragmentManager.beginTransaction().detach(frag).attach(frag).commit()
+            }
+        }
     }
     override fun onDestroy() {
         if (isBackgroundMode) stopBackgroundMode()

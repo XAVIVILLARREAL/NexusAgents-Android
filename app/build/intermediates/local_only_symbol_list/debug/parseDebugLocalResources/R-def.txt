@@ -66,6 +66,7 @@ id btnCopy
 id btnNotes
 id btnPaste
 id btnRefresh
+id btnReload
 id btnZoomIn
 id btnZoomOut
 id btnZoomReset

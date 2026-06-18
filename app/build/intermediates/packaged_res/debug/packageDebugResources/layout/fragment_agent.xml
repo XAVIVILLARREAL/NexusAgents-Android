@@ -123,6 +123,19 @@
             android:visibility="gone" />
     </FrameLayout>
 
+    <!-- Botón flotante de recarga -->
+    <ImageButton
+        android:id="@+id/btnReload"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="12dp"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:background="@drawable/bg_zoom_bar"
+        android:tint="@color/neon_cyan"
+        android:elevation="8dp"
+        android:contentDescription="Recargar" />
+
     <!-- Barra de ZOOM persistente con glassmorphism -->
     <LinearLayout
         android:id="@+id/zoomBar"
