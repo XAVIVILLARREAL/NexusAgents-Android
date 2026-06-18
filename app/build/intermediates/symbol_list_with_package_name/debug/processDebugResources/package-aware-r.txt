@@ -3248,7 +3248,6 @@ id beginning
 id bestChoice
 id blocking
 id bottom
-id bottomNav
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3609,6 +3608,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id tabLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans

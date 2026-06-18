@@ -62,7 +62,6 @@ id accentBar
 id action_background_mode
 id action_pip
 id action_reload
-id bottomNav
 id btnCopy
 id btnNotes
 id btnPaste
@@ -85,6 +84,7 @@ id sessionChips
 id statusCards
 id statusLabel
 id statusText
+id tabLayout
 id uptimeText
 id viewPager
 id webViewContainer
