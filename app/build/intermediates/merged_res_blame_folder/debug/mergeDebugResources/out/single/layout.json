@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.xtremediagnostics.nexusagents.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:/layout/fragment_agent.xml",
+        "source": "com.xtremediagnostics.nexusagents.app-main-50:/layout/fragment_agent.xml"
+    }
+]

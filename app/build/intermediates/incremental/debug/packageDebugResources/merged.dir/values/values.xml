@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FF448AFF</color>
+    <color name="background_dark">#FF0A0A0A</color>
+    <color name="nav_active">#FF00E676</color>
+    <color name="nav_inactive">#FF666666</color>
+    <color name="primary">#FF00E676</color>
+    <color name="primary_dark">#FF00C853</color>
+    <color name="surface_dark">#FF1A1A2E</color>
+    <color name="text_primary">#FFE0E0E0</color>
+    <color name="text_secondary">#FF888888</color>
+    <string name="antigravity_desc">Antigravity CLI</string>
+    <string name="app_name">Nexus Agents</string>
+    <string name="background_notification_text">Herramientas activas — programando en segundo plano</string>
+    <string name="background_notification_title">Nexus Agents</string>
+    <string name="codex_desc">Codex CLI</string>
+    <string name="deepseek_desc">DeepSeek TUI / CodeWhale</string>
+    <string name="gemini_desc">Google Gemini CLI</string>
+    <string name="minimax_desc">Minimax CLI</string>
+    <style name="Theme.NexusAgents" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/surface_dark</item>
+        <item name="android:navigationBarColor">@color/surface_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+    </style>
+</resources>

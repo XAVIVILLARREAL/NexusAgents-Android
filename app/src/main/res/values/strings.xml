@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nexus Agents</string>
+    <string name="deepseek_desc">DeepSeek TUI / CodeWhale</string>
+    <string name="gemini_desc">Google Gemini CLI</string>
+    <string name="antigravity_desc">Antigravity CLI</string>
+    <string name="minimax_desc">Minimax CLI</string>
+    <string name="codex_desc">Codex CLI</string>
+    <string name="background_notification_title">Nexus Agents</string>
+    <string name="background_notification_text">Herramientas activas — programando en segundo plano</string>
+</resources>
