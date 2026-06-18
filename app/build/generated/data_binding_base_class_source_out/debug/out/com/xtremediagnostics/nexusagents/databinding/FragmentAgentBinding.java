@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.chip.ChipGroup;
@@ -24,6 +25,9 @@ public final class FragmentAgentBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final View accentBar;
+
+  @NonNull
   public final ImageButton btnZoomIn;
 
   @NonNull
@@ -33,32 +37,33 @@ public final class FragmentAgentBinding implements ViewBinding {
   public final ImageButton btnZoomReset;
 
   @NonNull
-  public final TextView currentSessionLabel;
-
-  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
   public final ChipGroup sessionChips;
 
   @NonNull
+  public final TextView statusLabel;
+
+  @NonNull
   public final FrameLayout webViewContainer;
 
   @NonNull
-  public final LinearLayout zoomOverlay;
+  public final CardView zoomOverlay;
 
-  private FragmentAgentBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnZoomIn,
-      @NonNull ImageButton btnZoomOut, @NonNull ImageButton btnZoomReset,
-      @NonNull TextView currentSessionLabel, @NonNull ProgressBar progressBar,
-      @NonNull ChipGroup sessionChips, @NonNull FrameLayout webViewContainer,
-      @NonNull LinearLayout zoomOverlay) {
+  private FragmentAgentBinding(@NonNull LinearLayout rootView, @NonNull View accentBar,
+      @NonNull ImageButton btnZoomIn, @NonNull ImageButton btnZoomOut,
+      @NonNull ImageButton btnZoomReset, @NonNull ProgressBar progressBar,
+      @NonNull ChipGroup sessionChips, @NonNull TextView statusLabel,
+      @NonNull FrameLayout webViewContainer, @NonNull CardView zoomOverlay) {
     this.rootView = rootView;
+    this.accentBar = accentBar;
     this.btnZoomIn = btnZoomIn;
     this.btnZoomOut = btnZoomOut;
     this.btnZoomReset = btnZoomReset;
-    this.currentSessionLabel = currentSessionLabel;
     this.progressBar = progressBar;
     this.sessionChips = sessionChips;
+    this.statusLabel = statusLabel;
     this.webViewContainer = webViewContainer;
     this.zoomOverlay = zoomOverlay;
   }
@@ -90,6 +95,12 @@ public final class FragmentAgentBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.accentBar;
+      View accentBar = ViewBindings.findChildViewById(rootView, id);
+      if (accentBar == null) {
+        break missingId;
+      }
+
       id = R.id.btnZoomIn;
       ImageButton btnZoomIn = ViewBindings.findChildViewById(rootView, id);
       if (btnZoomIn == null) {
@@ -108,12 +119,6 @@ public final class FragmentAgentBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.currentSessionLabel;
-      TextView currentSessionLabel = ViewBindings.findChildViewById(rootView, id);
-      if (currentSessionLabel == null) {
-        break missingId;
-      }
-
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -126,6 +131,12 @@ public final class FragmentAgentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.statusLabel;
+      TextView statusLabel = ViewBindings.findChildViewById(rootView, id);
+      if (statusLabel == null) {
+        break missingId;
+      }
+
       id = R.id.webViewContainer;
       FrameLayout webViewContainer = ViewBindings.findChildViewById(rootView, id);
       if (webViewContainer == null) {
@@ -133,13 +144,13 @@ public final class FragmentAgentBinding implements ViewBinding {
       }
 
       id = R.id.zoomOverlay;
-      LinearLayout zoomOverlay = ViewBindings.findChildViewById(rootView, id);
+      CardView zoomOverlay = ViewBindings.findChildViewById(rootView, id);
       if (zoomOverlay == null) {
         break missingId;
       }
 
-      return new FragmentAgentBinding((LinearLayout) rootView, btnZoomIn, btnZoomOut, btnZoomReset,
-          currentSessionLabel, progressBar, sessionChips, webViewContainer, zoomOverlay);
+      return new FragmentAgentBinding((LinearLayout) rootView, accentBar, btnZoomIn, btnZoomOut,
+          btnZoomReset, progressBar, sessionChips, statusLabel, webViewContainer, zoomOverlay);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

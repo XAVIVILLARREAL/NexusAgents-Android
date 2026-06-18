@@ -1,13 +1,29 @@
 R_DEF: Internal format may change without notice
 local
+anim fade_in_scale
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right
 color accent
-color background_dark
+color bg_surface
+color bg_terminal
+color chip_bg_selected
+color chip_stroke_selector
+color divider
+color divider_strong
 color nav_active
+color nav_bg
 color nav_inactive
 color nav_selector
 color primary
 color primary_dark
+color splash_accent
+color splash_bg
+color surface_card
 color surface_dark
+color surface_light
+color text_dim
 color text_primary
 color text_secondary
 drawable ic_antigravity
@@ -17,7 +33,11 @@ drawable ic_gemini
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_minimax
+drawable ic_zoom_in
+drawable ic_zoom_out
+drawable ic_zoom_reset
 drawable zoom_overlay_bg
+id accentBar
 id action_background_mode
 id action_new_session
 id action_reload
@@ -25,7 +45,6 @@ id bottomNav
 id btnZoomIn
 id btnZoomOut
 id btnZoomReset
-id currentSessionLabel
 id nav_antigravity
 id nav_codex
 id nav_deepseek
@@ -33,6 +52,7 @@ id nav_gemini
 id nav_minimax
 id progressBar
 id sessionChips
+id statusLabel
 id viewPager
 id webViewContainer
 id zoomOverlay
@@ -51,5 +71,8 @@ string deepseek_desc
 string gemini_desc
 string minimax_desc
 style Theme.NexusAgents
+style Theme.Splash
+style Widget.BottomNav
+style WindowAnimations
 xml backup_rules
 xml data_extraction_rules

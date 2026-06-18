@@ -27,6 +27,7 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fade_in_scale
 anim fragment_fast_out_extra_slow_in
 anim linear_indeterminate_line1_head_interpolator
 anim linear_indeterminate_line1_tail_interpolator
@@ -47,6 +48,10 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1395,11 +1400,12 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
-color background_dark
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color bg_surface
+color bg_terminal
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1414,6 +1420,8 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color chip_bg_selected
+color chip_stroke_selector
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1456,6 +1464,8 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color divider
+color divider_strong
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -2087,6 +2097,7 @@ color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color nav_active
+color nav_bg
 color nav_inactive
 color nav_selector
 color notification_action_color_filter
@@ -2107,13 +2118,18 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color splash_accent
+color splash_bg
+color surface_card
 color surface_dark
+color surface_light
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color text_dim
 color text_primary
 color text_secondary
 color tooltip_background_dark
@@ -3033,6 +3049,9 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_zoom_in
+drawable ic_zoom_out
+drawable ic_zoom_reset
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3124,6 +3143,7 @@ id SYM
 id TOP_END
 id TOP_START
 id accelerate
+id accentBar
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3250,7 +3270,6 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
-id currentSessionLabel
 id currentState
 id custom
 id customPanel
@@ -3552,6 +3571,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statusLabel
 id stop
 id stretch
 id submenuarrow
@@ -4631,6 +4651,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_NexusAgents
+style Theme_Splash
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -4818,6 +4839,7 @@ style Widget_AppCompat_TextView
 style Widget_AppCompat_TextView_SpinnerItem
 style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
+style Widget_BottomNav
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Design_AppBarLayout
@@ -5121,6 +5143,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style WindowAnimations
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

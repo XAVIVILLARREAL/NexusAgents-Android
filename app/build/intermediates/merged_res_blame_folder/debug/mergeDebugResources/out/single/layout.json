@@ -1,11 +1,7 @@
 [
     {
-        "merged": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-main-50:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:\\layout\\fragment_agent.xml",
-        "source": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-main-50:\\layout\\fragment_agent.xml"
+        "merged": "com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.xtremediagnostics.nexusagents.app-main-50:/layout/activity_main.xml"
     },
     {
         "merged": "com.xtremediagnostics.nexusagents.app-mergeDebugResources-47:/layout/fragment_agent.xml",

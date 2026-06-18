@@ -1,15 +1,13 @@
 package com.xtremediagnostics.nexusagents
 
-/**
- * Configuración de los agentes CLI
- */
 data class AgentConfig(
     val id: String,
     val name: String,
     val url: String,
     val port: Int,
-    val icon: String,      // emoji para el menú
-    val description: String
+    val icon: String,
+    val description: String,
+    val accentColor: Long = 0xFF00E676  // Color de acento (verde por defecto)
 ) {
     companion object {
         val AGENTS = listOf(
@@ -19,7 +17,8 @@ data class AgentConfig(
                 url = "https://deepseek.xtremediagnostics.com",
                 port = 7681,
                 icon = "🧠",
-                description = "DeepSeek TUI / CodeWhale — Asistente principal"
+                description = "DeepSeek TUI / CodeWhale — Asistente principal",
+                accentColor = 0xFF00E676  // Verde Matrix
             ),
             AgentConfig(
                 id = "gemini",
@@ -27,7 +26,8 @@ data class AgentConfig(
                 url = "https://gemini.xtremediagnostics.com",
                 port = 7682,
                 icon = "✨",
-                description = "Google Gemini CLI"
+                description = "Google Gemini CLI",
+                accentColor = 0xFF448AFF  // Azul Google
             ),
             AgentConfig(
                 id = "antigravity",
@@ -35,7 +35,8 @@ data class AgentConfig(
                 url = "https://antigravity.xtremediagnostics.com",
                 port = 7683,
                 icon = "🚀",
-                description = "Antigravity CLI"
+                description = "Antigravity CLI",
+                accentColor = 0xFFFF6D00  // Naranja
             ),
             AgentConfig(
                 id = "minimax",
@@ -43,7 +44,8 @@ data class AgentConfig(
                 url = "https://minimax.xtremediagnostics.com",
                 port = 7684,
                 icon = "⚡",
-                description = "Minimax CLI"
+                description = "Minimax CLI",
+                accentColor = 0xFFFFD600  // Amarillo eléctrico
             ),
             AgentConfig(
                 id = "codex",
@@ -51,7 +53,8 @@ data class AgentConfig(
                 url = "https://codex.xtremediagnostics.com",
                 port = 7685,
                 icon = "💻",
-                description = "Codex CLI — Programación"
+                description = "Codex CLI — Programación",
+                accentColor = 0xFF00BCD4  // Cyan
             )
         )
     }
