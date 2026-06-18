@@ -299,6 +299,7 @@ class AgentFragment : Fragment() {
                     applyZoomToWebView()
                     // Inyectar auto-reconexión
                     injectAutoReconnect(view)
+                    injectTouchScrollFix(view)
                 }
                 override fun shouldOverrideUrlLoading(v: WebView?, r: WebResourceRequest?) = false
             }
@@ -354,6 +355,26 @@ class AgentFragment : Fragment() {
             }
         }
     }
+    private fun injectTouchScrollFix(wv: WebView?) {
+        wv?.evaluateJavascript("""
+            (function(){
+                if(window.__nexusScrollFixed) return;
+                window.__nexusScrollFixed = true;
+                setTimeout(function(){
+                    var vp = document.querySelector('.xterm-viewport');
+                    if(!vp) vp = document.querySelector('[class*="terminal"]');
+                    if(!vp) vp = document.querySelector('.xterm-screen');
+                    if(!vp) vp = document.body;
+                    vp.style.overflow = 'auto';
+                    vp.style.webkitOverflowScrolling = 'touch';
+                    vp.style.overscrollBehavior = 'contain';
+                    vp.style.touchAction = 'pan-y';
+                    vp.addEventListener('touchmove', function(e){ e.stopPropagation(); }, {passive:false});
+                }, 2000);
+            })();
+        """.trimIndent(), null)
+    }
+
     private val wvHandler = android.os.Handler(android.os.Looper.getMainLooper())
 
     // =====================================================================
