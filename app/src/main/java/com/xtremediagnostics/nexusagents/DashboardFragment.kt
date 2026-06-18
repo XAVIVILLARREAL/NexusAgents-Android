@@ -65,7 +65,7 @@ class DashboardFragment : Fragment() {
         conn.setRequestProperty("Content-Type", "application/json")
         conn.doOutput = true
 
-        val cmd = """{"command":"docker stats --no-stream --format '{\"name\":\"{{.Name}}\",\"cpu\":\"{{.CPUPerc}}\",\"mem\":\"{{.MemUsage}}\"}' nexus-deepseek nexus-gemini nexus-antigravity nexus-minimax nexus-codex cloudflared-deepseek 2>/dev/null; echo '---RAM---'; free -m | grep Mem; echo '---UP---'; cat /proc/uptime"}"""
+        val cmd = """{"command":"docker stats --no-stream --format '{\"name\":\"{{.Name}}\",\"cpu\":\"{{.CPUPerc}}\",\"mem\":\"{{.MemUsage}}\"}' nexus-deepseek nexus-antigravity nexus-codex cloudflared-deepseek 2>/dev/null; echo '---RAM---'; free -m | grep Mem; echo '---UP---'; cat /proc/uptime"}"""
         conn.outputStream.write(cmd.toByteArray())
 
         val resp = BufferedReader(InputStreamReader(conn.inputStream)).readText()
@@ -110,8 +110,7 @@ class DashboardFragment : Fragment() {
             // Container cards
             statusCards.removeAllViews()
             val colors = mapOf(
-                "nexus-deepseek" to "#00F0FF", "nexus-gemini" to "#3366FF",
-                "nexus-antigravity" to "#FF6600", "nexus-minimax" to "#FFD600",
+                "nexus-deepseek" to "#00F0FF", "nexus-antigravity" to "#FF6600",
                 "nexus-codex" to "#00FF66", "cloudflared-deepseek" to "#AA00FF"
             )
             for (c in containers) {

@@ -140,10 +140,6 @@
         "source": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-main-50:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.xtremediagnostics.nexusagents.app-debug-48:/layout_fragment_agent.xml.flat",
-        "source": "com.xtremediagnostics.nexusagents.app-main-50:/layout/fragment_agent.xml"
-    },
-    {
         "merged": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-debug-48:\\drawable_ic_codex.xml.flat",
         "source": "C:\\Users\\javir\\.gradle\\daemon\\8.13\\com.xtremediagnostics.nexusagents.app-main-50:\\drawable\\ic_codex.xml"
     },

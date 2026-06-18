@@ -46,10 +46,8 @@ drawable ic_commits
 drawable ic_copy
 drawable ic_dashboard
 drawable ic_deepseek
-drawable ic_gemini
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable ic_minimax
 drawable ic_notes
 drawable ic_paste
 drawable ic_pip

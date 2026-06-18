@@ -6,7 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
 import android.text.InputType
-import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +29,6 @@ class AgentFragment : Fragment() {
     private lateinit var sessionManager: SessionManager
     private val webViewCache = mutableMapOf<String, WebView>()
     private val noteCache = mutableMapOf<String, String>()
-    private val webViewStates = mutableMapOf<String, Bundle>()
     private var currentSessionId: String? = null
     private var currentZoom = 1.0f
     private val ZOOM_STEP = 0.05f
@@ -241,7 +239,7 @@ class AgentFragment : Fragment() {
 
     private fun removeSession(sid: String) {
         if (sessionManager.removeSession(sid)) {
-            webViewCache.remove(sid)?.destroy(); webViewStates.remove(sid); noteCache.remove(sid)
+            webViewCache.remove(sid)?.destroy(); noteCache.remove(sid)
             setupSessionChips()
             if (currentSessionId == sid) switchToSession(sessionManager.sessions[0].id, true)
         }
@@ -375,27 +373,6 @@ class AgentFragment : Fragment() {
     private val wvHandler = android.os.Handler(android.os.Looper.getMainLooper())
 
     // =====================================================================
-    // LIFECYCLE — save/restore WebView state
-    // =====================================================================
-    override fun onPause() {
-        super.onPause()
-        // Guardar WebView state al salir
-        webViewCache.forEach { (sid, wv) ->
-            val bundle = Bundle()
-            wv.saveState(bundle)
-            webViewStates[sid] = bundle
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        // Verificar y re-conectar WebViews que puedan haberse desconectado
-        webViewCache.forEach { (sid, wv) ->
-            wv.evaluateJavascript("(function(){if(!document.body||!document.body.innerHTML.length)location.reload()})()", null)
-        }
-    }
-
-    // =====================================================================
     // PUBLIC
     // =====================================================================
     private fun setupReloadButton(root: View) {
@@ -410,10 +387,6 @@ class AgentFragment : Fragment() {
     fun getAgent() = agent
 
     override fun onDestroyView() {
-        // Guardar todos los WebView states antes de destruir
-        webViewCache.forEach { (sid, wv) ->
-            val bundle = Bundle(); wv.saveState(bundle); webViewStates[sid] = bundle
-        }
         webViewCache.values.forEach { it.stopLoading(); it.destroy() }
         webViewCache.clear()
         super.onDestroyView()
