@@ -3049,6 +3049,7 @@ drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_codex
+drawable ic_commits
 drawable ic_copy
 drawable ic_dashboard
 drawable ic_deepseek
@@ -3282,6 +3283,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id commitsList
 id compress
 id confirm_button
 id constraint
@@ -3463,6 +3465,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id nav_antigravity
 id nav_codex
+id nav_commits
 id nav_controller_view_tag
 id nav_dashboard
 id nav_deepseek
@@ -3600,6 +3603,7 @@ id staticLayout
 id staticPostLayout
 id statusCards
 id statusLabel
+id statusText
 id stop
 id stretch
 id submenuarrow
@@ -3815,6 +3819,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_agent
+layout fragment_commits
 layout fragment_dashboard
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

@@ -12,7 +12,8 @@ class AgentPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activ
         "antigravity" to { AgentFragment.newInstance(AgentConfig.AGENTS[2]) },
         "minimax" to { AgentFragment.newInstance(AgentConfig.AGENTS[3]) },
         "codex" to { AgentFragment.newInstance(AgentConfig.AGENTS[4]) },
-        "dashboard" to { DashboardFragment() }
+        "dashboard" to { DashboardFragment() },
+        "commits" to { CommitsFragment() }
     )
 
     override fun getItemCount() = items.size

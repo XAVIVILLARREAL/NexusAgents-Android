@@ -6,4 +6,5 @@
     <item android:id="@+id/nav_minimax" android:icon="@drawable/ic_minimax" android:title="Minimax" />
     <item android:id="@+id/nav_codex" android:icon="@drawable/ic_codex" android:title="Codex" />
     <item android:id="@+id/nav_dashboard" android:icon="@drawable/ic_dashboard" android:title="Server" />
+    <item android:id="@+id/nav_commits" android:icon="@drawable/ic_commits" android:title="Commits" />
 </menu>

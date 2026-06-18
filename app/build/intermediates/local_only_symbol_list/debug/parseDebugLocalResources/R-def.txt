@@ -42,6 +42,7 @@ drawable bg_glass_card
 drawable bg_zoom_bar
 drawable ic_antigravity
 drawable ic_codex
+drawable ic_commits
 drawable ic_copy
 drawable ic_dashboard
 drawable ic_deepseek
@@ -69,8 +70,10 @@ id btnRefresh
 id btnZoomIn
 id btnZoomOut
 id btnZoomReset
+id commitsList
 id nav_antigravity
 id nav_codex
+id nav_commits
 id nav_dashboard
 id nav_deepseek
 id nav_gemini
@@ -81,6 +84,7 @@ id ramText
 id sessionChips
 id statusCards
 id statusLabel
+id statusText
 id uptimeText
 id viewPager
 id webViewContainer
@@ -91,6 +95,7 @@ id zoomPreset150
 id zoomSlider
 layout activity_main
 layout fragment_agent
+layout fragment_commits
 layout fragment_dashboard
 menu bottom_nav_menu
 menu menu_toolbar

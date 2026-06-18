@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             val pos = when (item.itemId) {
                 R.id.nav_deepseek -> 0; R.id.nav_gemini -> 1
                 R.id.nav_antigravity -> 2; R.id.nav_minimax -> 3
-                R.id.nav_codex -> 4; R.id.nav_dashboard -> 5
+                R.id.nav_codex -> 4; R.id.nav_dashboard -> 5; R.id.nav_commits -> 6
                 else -> 0
             }
             viewPager.setCurrentItem(pos, true)
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateTitle(pos: Int) {
-        val titles = listOf("🧠 DeepSeek","✨ Gemini","🚀 Antigravity","⚡ Minimax","💻 Codex","📊 Server")
+        val titles = listOf("🧠 DeepSeek","✨ Gemini","🚀 Antigravity","⚡ Minimax","💻 Codex","📊 Server","📜 Commits")
         if (pos < titles.size) title = titles[pos]
     }
 
