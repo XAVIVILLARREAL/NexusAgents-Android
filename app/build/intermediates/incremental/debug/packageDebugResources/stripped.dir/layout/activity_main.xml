@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_terminal"
+    android:background="@color/bg_void"
     android:fitsSystemWindows="true">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -18,8 +18,8 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/divider"
+        android:layout_height="0.5dp"
+        android:background="@color/glow_cyan"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="accent">#FF448AFF</color>
-    <color name="bg_surface">#FF0E0E12</color>
-    <color name="bg_terminal">#FF080808</color>
-    <color name="chip_bg_selected">#22FFFFFF</color>
-    <color name="divider">#1AFFFFFF</color>
-    <color name="divider_strong">#22FFFFFF</color>
-    <color name="nav_active">#FFFFFFFF</color>
-    <color name="nav_bg">#FF0A0A10</color>
-    <color name="nav_inactive">#FF5A5A6E</color>
-    <color name="primary">#FF00E676</color>
-    <color name="primary_dark">#FF00C853</color>
-    <color name="splash_accent">#FF00E676</color>
-    <color name="splash_bg">#FF080808</color>
-    <color name="surface_card">#E614141C</color>
-    <color name="surface_dark">#FF16161E</color>
-    <color name="surface_light">#FF1E1E2A</color>
-    <color name="text_dim">#FF60606E</color>
-    <color name="text_primary">#FFE8E8EC</color>
-    <color name="text_secondary">#FF9A9AA8</color>
+    <color name="agent_antigravity">#FFFF6600</color>
+    <color name="agent_codex">#FF00FF66</color>
+    <color name="agent_deepseek">#FF00F0FF</color>
+    <color name="agent_gemini">#FF3366FF</color>
+    <color name="agent_minimax">#FFFFD600</color>
+    <color name="bg_deep">#FF0A0C12</color>
+    <color name="bg_elevated">#FF12141E</color>
+    <color name="bg_surface">#FF0E1018</color>
+    <color name="bg_void">#FF060608</color>
+    <color name="chip_glow_cyan">#3300F0FF</color>
+    <color name="chip_glow_magenta">#33FF00E5</color>
+    <color name="glass_cyan">#1800F0FF</color>
+    <color name="glass_dark">#DD0A0C12</color>
+    <color name="glass_light">#881A1C26</color>
+    <color name="glass_medium">#CC12141E</color>
+    <color name="glow_cyan">#4400F0FF</color>
+    <color name="glow_dim">#22FFFFFF</color>
+    <color name="glow_magenta">#44FF00E5</color>
+    <color name="nav_active">#FF00F0FF</color>
+    <color name="nav_bg">#F20A0C12</color>
+    <color name="nav_inactive">#FF3A4A5E</color>
+    <color name="neon_blue">#FF3366FF</color>
+    <color name="neon_cyan">#FF00F0FF</color>
+    <color name="neon_green">#FF00FF66</color>
+    <color name="neon_magenta">#FFFF00E5</color>
+    <color name="neon_orange">#FFFF6600</color>
+    <color name="neon_purple">#FFAA00FF</color>
+    <color name="neon_yellow">#FFFFD600</color>
+    <color name="text_dim">#FF7A8A9E</color>
+    <color name="text_muted">#FF4A5A6E</color>
+    <color name="text_neon">#FFE0F8FF</color>
     <string name="antigravity_desc">Antigravity CLI</string>
     <string name="app_name">Nexus Agents</string>
     <string name="background_notification_text">Herramientas activas — programando en segundo plano</string>
@@ -28,33 +40,20 @@
     <string name="gemini_desc">Google Gemini CLI</string>
     <string name="minimax_desc">Minimax CLI</string>
     <style name="Theme.NexusAgents" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="colorOnPrimary">@color/bg_terminal</item>
-        <item name="android:colorBackground">@color/bg_terminal</item>
-        <item name="android:statusBarColor">@color/bg_surface</item>
+        <item name="colorPrimary">@color/neon_cyan</item>
+        <item name="colorPrimaryDark">@color/bg_deep</item>
+        <item name="colorAccent">@color/neon_magenta</item>
+        <item name="colorOnPrimary">@color/bg_void</item>
+        <item name="android:colorBackground">@color/bg_void</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
         <item name="android:navigationBarColor">@color/nav_bg</item>
-        <item name="android:windowBackground">@color/bg_terminal</item>
-        <item name="android:textColorPrimary">@color/text_primary</item>
-        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:windowBackground">@color/bg_void</item>
+        <item name="android:textColorPrimary">@color/text_neon</item>
+        <item name="android:textColorSecondary">@color/text_dim</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
         <item name="android:navigationBarDividerColor">@android:color/transparent</item>
-        
-        
-        <item name="android:windowAnimationStyle">@style/WindowAnimations</item>
-        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
-        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
-        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
-        
-        
-        <item name="colorControlHighlight">@color/primary</item>
-    </style>
-    <style name="Theme.Splash" parent="Theme.NexusAgents">
-        <item name="android:windowBackground">@color/splash_bg</item>
-        <item name="android:statusBarColor">@color/splash_bg</item>
+        <item name="colorControlHighlight">@color/glass_cyan</item>
     </style>
     <style name="Widget.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="android:background">@color/nav_bg</item>
@@ -62,9 +61,5 @@
         <item name="itemTextColor">@color/nav_selector</item>
         <item name="labelVisibilityMode">labeled</item>
         <item name="elevation">0dp</item>
-    </style>
-    <style name="WindowAnimations">
-        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
-        <item name="android:windowExitAnimation">@anim/slide_out_left</item>
     </style>
 </resources>

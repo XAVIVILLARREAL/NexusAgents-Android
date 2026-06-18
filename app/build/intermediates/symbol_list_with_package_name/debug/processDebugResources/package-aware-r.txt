@@ -1395,17 +1395,23 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
-color accent
 color accent_material_dark
 color accent_material_light
+color agent_antigravity
+color agent_codex
+color agent_deepseek
+color agent_gemini
+color agent_minimax
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color bg_deep
+color bg_elevated
 color bg_surface
-color bg_terminal
+color bg_void
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1420,7 +1426,8 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
-color chip_bg_selected
+color chip_glow_cyan
+color chip_glow_magenta
 color chip_stroke_selector
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
@@ -1464,12 +1471,17 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
-color divider
-color divider_strong
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color glass_cyan
+color glass_dark
+color glass_light
+color glass_medium
+color glow_cyan
+color glow_dim
+color glow_magenta
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2100,10 +2112,15 @@ color nav_active
 color nav_bg
 color nav_inactive
 color nav_selector
+color neon_blue
+color neon_cyan
+color neon_green
+color neon_magenta
+color neon_orange
+color neon_purple
+color neon_yellow
 color notification_action_color_filter
 color notification_icon_bg_color
-color primary
-color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2118,11 +2135,6 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
-color splash_accent
-color splash_bg
-color surface_card
-color surface_dark
-color surface_light
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -2130,8 +2142,8 @@ color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color text_dim
-color text_primary
-color text_secondary
+color text_muted
+color text_neon
 color tooltip_background_dark
 color tooltip_background_light
 dimen abc_action_bar_content_inset_material
@@ -3011,6 +3023,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_glass_card
+drawable bg_zoom_bar
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3048,6 +3062,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notes
 drawable ic_search_black_24
 drawable ic_zoom_in
 drawable ic_zoom_out
@@ -3124,6 +3139,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable slider_thumb
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3232,6 +3248,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnNotes
 id btnZoomIn
 id btnZoomOut
 id btnZoomReset
@@ -3648,7 +3665,11 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
-id zoomOverlay
+id zoomBar
+id zoomLabel
+id zoomPreset100
+id zoomPreset150
+id zoomSlider
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -4651,7 +4672,6 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_NexusAgents
-style Theme_Splash
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -5143,7 +5163,6 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
-style WindowAnimations
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

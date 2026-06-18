@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.chip.ChipGroup;
@@ -26,6 +26,9 @@ public final class FragmentAgentBinding implements ViewBinding {
 
   @NonNull
   public final View accentBar;
+
+  @NonNull
+  public final ImageButton btnNotes;
 
   @NonNull
   public final ImageButton btnZoomIn;
@@ -49,15 +52,30 @@ public final class FragmentAgentBinding implements ViewBinding {
   public final FrameLayout webViewContainer;
 
   @NonNull
-  public final CardView zoomOverlay;
+  public final LinearLayout zoomBar;
+
+  @NonNull
+  public final TextView zoomLabel;
+
+  @NonNull
+  public final TextView zoomPreset100;
+
+  @NonNull
+  public final TextView zoomPreset150;
+
+  @NonNull
+  public final SeekBar zoomSlider;
 
   private FragmentAgentBinding(@NonNull LinearLayout rootView, @NonNull View accentBar,
-      @NonNull ImageButton btnZoomIn, @NonNull ImageButton btnZoomOut,
-      @NonNull ImageButton btnZoomReset, @NonNull ProgressBar progressBar,
-      @NonNull ChipGroup sessionChips, @NonNull TextView statusLabel,
-      @NonNull FrameLayout webViewContainer, @NonNull CardView zoomOverlay) {
+      @NonNull ImageButton btnNotes, @NonNull ImageButton btnZoomIn,
+      @NonNull ImageButton btnZoomOut, @NonNull ImageButton btnZoomReset,
+      @NonNull ProgressBar progressBar, @NonNull ChipGroup sessionChips,
+      @NonNull TextView statusLabel, @NonNull FrameLayout webViewContainer,
+      @NonNull LinearLayout zoomBar, @NonNull TextView zoomLabel, @NonNull TextView zoomPreset100,
+      @NonNull TextView zoomPreset150, @NonNull SeekBar zoomSlider) {
     this.rootView = rootView;
     this.accentBar = accentBar;
+    this.btnNotes = btnNotes;
     this.btnZoomIn = btnZoomIn;
     this.btnZoomOut = btnZoomOut;
     this.btnZoomReset = btnZoomReset;
@@ -65,7 +83,11 @@ public final class FragmentAgentBinding implements ViewBinding {
     this.sessionChips = sessionChips;
     this.statusLabel = statusLabel;
     this.webViewContainer = webViewContainer;
-    this.zoomOverlay = zoomOverlay;
+    this.zoomBar = zoomBar;
+    this.zoomLabel = zoomLabel;
+    this.zoomPreset100 = zoomPreset100;
+    this.zoomPreset150 = zoomPreset150;
+    this.zoomSlider = zoomSlider;
   }
 
   @Override
@@ -98,6 +120,12 @@ public final class FragmentAgentBinding implements ViewBinding {
       id = R.id.accentBar;
       View accentBar = ViewBindings.findChildViewById(rootView, id);
       if (accentBar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnNotes;
+      ImageButton btnNotes = ViewBindings.findChildViewById(rootView, id);
+      if (btnNotes == null) {
         break missingId;
       }
 
@@ -143,14 +171,39 @@ public final class FragmentAgentBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.zoomOverlay;
-      CardView zoomOverlay = ViewBindings.findChildViewById(rootView, id);
-      if (zoomOverlay == null) {
+      id = R.id.zoomBar;
+      LinearLayout zoomBar = ViewBindings.findChildViewById(rootView, id);
+      if (zoomBar == null) {
         break missingId;
       }
 
-      return new FragmentAgentBinding((LinearLayout) rootView, accentBar, btnZoomIn, btnZoomOut,
-          btnZoomReset, progressBar, sessionChips, statusLabel, webViewContainer, zoomOverlay);
+      id = R.id.zoomLabel;
+      TextView zoomLabel = ViewBindings.findChildViewById(rootView, id);
+      if (zoomLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.zoomPreset100;
+      TextView zoomPreset100 = ViewBindings.findChildViewById(rootView, id);
+      if (zoomPreset100 == null) {
+        break missingId;
+      }
+
+      id = R.id.zoomPreset150;
+      TextView zoomPreset150 = ViewBindings.findChildViewById(rootView, id);
+      if (zoomPreset150 == null) {
+        break missingId;
+      }
+
+      id = R.id.zoomSlider;
+      SeekBar zoomSlider = ViewBindings.findChildViewById(rootView, id);
+      if (zoomSlider == null) {
+        break missingId;
+      }
+
+      return new FragmentAgentBinding((LinearLayout) rootView, accentBar, btnNotes, btnZoomIn,
+          btnZoomOut, btnZoomReset, progressBar, sessionChips, statusLabel, webViewContainer,
+          zoomBar, zoomLabel, zoomPreset100, zoomPreset150, zoomSlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

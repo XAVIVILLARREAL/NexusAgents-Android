@@ -7,55 +7,21 @@ data class AgentConfig(
     val port: Int,
     val icon: String,
     val description: String,
-    val accentColor: Long = 0xFF00E676  // Color de acento (verde por defecto)
+    val accentColor: Long = 0xFF00F0FF,
+    val glowColor: Long = 0x4400F0FF
 ) {
     companion object {
         val AGENTS = listOf(
-            AgentConfig(
-                id = "deepseek",
-                name = "DeepSeek",
-                url = "https://deepseek.xtremediagnostics.com",
-                port = 7681,
-                icon = "🧠",
-                description = "DeepSeek TUI / CodeWhale — Asistente principal",
-                accentColor = 0xFF00E676  // Verde Matrix
-            ),
-            AgentConfig(
-                id = "gemini",
-                name = "Gemini",
-                url = "https://gemini.xtremediagnostics.com",
-                port = 7682,
-                icon = "✨",
-                description = "Google Gemini CLI",
-                accentColor = 0xFF448AFF  // Azul Google
-            ),
-            AgentConfig(
-                id = "antigravity",
-                name = "Antigravity",
-                url = "https://antigravity.xtremediagnostics.com",
-                port = 7683,
-                icon = "🚀",
-                description = "Antigravity CLI",
-                accentColor = 0xFFFF6D00  // Naranja
-            ),
-            AgentConfig(
-                id = "minimax",
-                name = "Minimax",
-                url = "https://minimax.xtremediagnostics.com",
-                port = 7684,
-                icon = "⚡",
-                description = "Minimax CLI",
-                accentColor = 0xFFFFD600  // Amarillo eléctrico
-            ),
-            AgentConfig(
-                id = "codex",
-                name = "Codex",
-                url = "https://codex.xtremediagnostics.com",
-                port = 7685,
-                icon = "💻",
-                description = "Codex CLI — Programación",
-                accentColor = 0xFF00BCD4  // Cyan
-            )
+            AgentConfig("deepseek","DeepSeek","https://deepseek.xtremediagnostics.com",7681,
+                "🧠","DeepSeek TUI / CodeWhale", 0xFF00F0FF, 0x4400F0FF),
+            AgentConfig("gemini","Gemini","https://gemini.xtremediagnostics.com",7682,
+                "✨","Google Gemini CLI", 0xFF3366FF, 0x443366FF),
+            AgentConfig("antigravity","Antigravity","https://antigravity.xtremediagnostics.com",7683,
+                "🚀","Antigravity CLI", 0xFFFF6600, 0x44FF6600),
+            AgentConfig("minimax","Minimax","https://minimax.xtremediagnostics.com",7684,
+                "⚡","Minimax CLI", 0xFFFFD600, 0x44FFD600),
+            AgentConfig("codex","Codex","https://codex.xtremediagnostics.com",7685,
+                "💻","Codex CLI", 0xFF00FF66, 0x4400FF66)
         )
     }
 }

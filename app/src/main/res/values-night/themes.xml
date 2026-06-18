@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.NexusAgents" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="colorOnPrimary">@color/bg_terminal</item>
-        <item name="android:colorBackground">@color/bg_terminal</item>
-        <item name="android:statusBarColor">@color/bg_surface</item>
+        <item name="colorPrimary">@color/neon_cyan</item>
+        <item name="colorPrimaryDark">@color/bg_deep</item>
+        <item name="colorAccent">@color/neon_magenta</item>
+        <item name="android:colorBackground">@color/bg_void</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
         <item name="android:navigationBarColor">@color/nav_bg</item>
-        <item name="android:windowBackground">@color/bg_terminal</item>
-        <item name="android:textColorPrimary">@color/text_primary</item>
-        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:windowBackground">@color/bg_void</item>
+        <item name="android:textColorPrimary">@color/text_neon</item>
+        <item name="android:textColorSecondary">@color/text_dim</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
     </style>

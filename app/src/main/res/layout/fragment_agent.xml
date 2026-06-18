@@ -1,41 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_terminal">
+    android:background="@color/bg_void">
 
-    <!-- Barra de acento (color del agente, 3dp) -->
+    <!-- Barra de acento neón (color del agente) -->
     <View
         android:id="@+id/accentBar"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@color/primary" />
+        android:layout_height="2dp"
+        android:background="@color/neon_cyan" />
 
-    <!-- Línea de estado premium -->
-    <TextView
-        android:id="@+id/statusLabel"
+    <!-- Status bar: agente · sesión · zoom -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
-        android:text="🧠  DeepSeek  ·  Sesión 1  ·  Zoom: 100%"
-        android:textColor="@color/text_dim"
-        android:textSize="11sp"
-        android:fontFamily="monospace"
-        android:letterSpacing="0.03"
-        android:gravity="start" />
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical"
+        android:background="@color/bg_deep">
 
-    <!-- Chips de sesiones con scroll horizontal -->
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🧠 DeepSeek · Sesión 1"
+            android:textColor="@color/text_neon"
+            android:textSize="11sp"
+            android:fontFamily="monospace" />
+
+        <TextView
+            android:id="@+id/zoomLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/neon_cyan"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btnNotes"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_notes"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/neon_cyan"
+            android:contentDescription="Notas" />
+    </LinearLayout>
+
+    <!-- Chips de sesiones -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:paddingBottom="6dp">
+        android:paddingBottom="4dp"
+        android:background="@color/bg_deep">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/sessionChips"
@@ -43,17 +69,10 @@
             android:layout_height="wrap_content"
             app:singleSelection="true"
             app:selectionRequired="true"
-            app:chipSpacing="6dp" />
-
+            app:chipSpacing="4dp" />
     </HorizontalScrollView>
 
-    <!-- Separador sutil -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider" />
-
-    <!-- Contenedor principal WebView + Zoom -->
+    <!-- Contenedor WebView -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -64,7 +83,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!-- ProgressBar premium con gradiente -->
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -72,70 +90,91 @@
             android:layout_height="2dp"
             android:layout_gravity="top"
             android:indeterminate="true"
+            android:indeterminateTint="@color/neon_cyan"
             android:visibility="gone" />
+    </FrameLayout>
 
-        <!-- Zoom HUD — card con glass effect -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/zoomOverlay"
+    <!-- Barra de ZOOM persistente con glassmorphism -->
+    <LinearLayout
+        android:id="@+id/zoomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_zoom_bar"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="4dp"
+        android:elevation="8dp">
+
+        <!-- Botón zoom out -->
+        <ImageButton
+            android:id="@+id/btnZoomOut"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_zoom_out"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/text_neon"
+            android:contentDescription="Zoom out" />
+
+        <!-- Slider de zoom -->
+        <SeekBar
+            android:id="@+id/zoomSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="65"
+            android:progress="20"
+            android:thumb="@drawable/slider_thumb"
+            android:progressTint="@color/neon_cyan"
+            android:thumbTint="@color/neon_cyan"
+            android:paddingHorizontal="4dp" />
+
+        <!-- Botón zoom in -->
+        <ImageButton
+            android:id="@+id/btnZoomIn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_zoom_in"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/text_neon"
+            android:contentDescription="Zoom in" />
+
+        <!-- Presets -->
+        <TextView
+            android:id="@+id/zoomPreset100"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="12dp"
-            app:cardBackgroundColor="@color/surface_card"
-            android:visibility="gone"
-            android:alpha="0">
+            android:text="1x"
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:paddingHorizontal="6dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="4dp">
+        <TextView
+            android:id="@+id/zoomPreset150"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.5x"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:paddingHorizontal="6dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-                <ImageButton
-                    android:id="@+id/btnZoomOut"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:src="@drawable/ic_zoom_out"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:contentDescription="Zoom out"
-                    android:tint="@color/text_primary" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/divider" />
-
-                <ImageButton
-                    android:id="@+id/btnZoomReset"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:src="@drawable/ic_zoom_reset"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:contentDescription="Reset zoom"
-                    android:tint="@color/primary" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/divider" />
-
-                <ImageButton
-                    android:id="@+id/btnZoomIn"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:src="@drawable/ic_zoom_in"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:contentDescription="Zoom in"
-                    android:tint="@color/text_primary" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </FrameLayout>
+        <!-- Botón reset -->
+        <ImageButton
+            android:id="@+id/btnZoomReset"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_zoom_reset"
+            android:background="?selectableItemBackgroundBorderless"
+            android:tint="@color/neon_magenta"
+            android:contentDescription="Reset" />
+    </LinearLayout>
 
 </LinearLayout>
