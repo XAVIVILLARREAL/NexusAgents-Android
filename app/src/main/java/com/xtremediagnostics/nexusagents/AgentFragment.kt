@@ -103,7 +103,13 @@ class AgentFragment : Fragment() {
         ZoomPreferences.saveZoom(requireContext(), agent.id, currentZoom)
     }
     private fun applyZoomToWebView() {
-        webViewCache[currentSessionId]?.evaluateJavascript("document.body.style.zoom='$currentZoom'", null)
+        // Escalar el contenedor del WebView (zoom visual real)
+        webViewContainer?.apply {
+            pivotX = 0f; pivotY = 0f
+            scaleX = currentZoom; scaleY = currentZoom
+        }
+        // También aplicar textZoom para agrandar letras
+        webViewCache[currentSessionId]?.settings?.textZoom = (currentZoom * 100).toInt()
     }
     private fun updateZoomUI() {
         zoomLabel?.text = "${(currentZoom * 100).toInt()}%"
@@ -241,11 +247,14 @@ class AgentFragment : Fragment() {
                 allowFileAccess = false; allowContentAccess = false
                 cacheMode = WebSettings.LOAD_DEFAULT
                 mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-                useWideViewPort = true; loadWithOverviewMode = true
+                useWideViewPort = false
+                loadWithOverviewMode = false
                 builtInZoomControls = false; displayZoomControls = false; setSupportZoom(false)
-                textZoom = 100
-                userAgentString = "NexusAgents/3.1 (Android) $userAgentString"
+                textZoom = (currentZoom * 100).toInt()
+                userAgentString = "NexusAgents/3.2 (Android) $userAgentString"
             }
+            // Escala inicial del contenedor desde el primer momento
+            post { applyZoomToWebView() }
             // JavaScript interface para auto-reconexión
             addJavascriptInterface(AutoReconnectBridge(sid), "NexusBridge")
 
