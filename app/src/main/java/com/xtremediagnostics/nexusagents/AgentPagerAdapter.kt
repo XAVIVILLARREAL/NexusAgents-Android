@@ -10,6 +10,7 @@ class AgentPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activ
         "deepseek" to { AgentFragment.newInstance(AgentConfig.AGENTS[0]) },
         "antigravity" to { AgentFragment.newInstance(AgentConfig.AGENTS[1]) },
         "codex" to { AgentFragment.newInstance(AgentConfig.AGENTS[2]) },
+        "opencode" to { AgentFragment.newInstance(AgentConfig.AGENTS[3]) },
         "dashboard" to { DashboardFragment() },
         "commits" to { CommitsFragment() }
     )

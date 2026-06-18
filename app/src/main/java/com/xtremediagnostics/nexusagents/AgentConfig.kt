@@ -12,7 +12,9 @@ data class AgentConfig(
             AgentConfig("antigravity","Antigravity","https://antigravity.xtremediagnostics.com",7683,
                 "🚀","Antigravity CLI", 0xFFFF6600, 0x44FF6600),
             AgentConfig("codex","Codex","https://codex.xtremediagnostics.com",7685,
-                "💻","Codex CLI", 0xFF00FF66, 0x4400FF66)
+                "💻","Codex CLI", 0xFF00FF66, 0x4400FF66),
+            AgentConfig("opencode","OpenCode","https://opencode.xtremediagnostics.com",7686,
+                "🤖","OpenCode AI", 0xFFFF00E5, 0x44FF00E5)
         )
     }
 }

@@ -49,6 +49,7 @@ drawable ic_deepseek
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notes
+drawable ic_opencode
 drawable ic_paste
 drawable ic_pip
 drawable ic_zoom_in
@@ -74,6 +75,7 @@ id nav_codex
 id nav_commits
 id nav_dashboard
 id nav_deepseek
+id nav_opencode
 id progressBar
 id ramBar
 id ramText

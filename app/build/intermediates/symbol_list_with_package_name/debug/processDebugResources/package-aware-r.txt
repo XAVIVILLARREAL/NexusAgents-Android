@@ -3064,6 +3064,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notes
+drawable ic_opencode
 drawable ic_paste
 drawable ic_pip
 drawable ic_search_black_24
@@ -3468,6 +3469,7 @@ id nav_controller_view_tag
 id nav_dashboard
 id nav_deepseek
 id nav_host_fragment_container
+id nav_opencode
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view

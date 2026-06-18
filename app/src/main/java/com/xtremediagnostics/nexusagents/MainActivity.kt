@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private val tabData = listOf(
         "🧠" to "DeepSeek", "🚀" to "Antigravity", "💻" to "Codex",
-        "📊" to "Server", "📜" to "Commits"
+        "🤖" to "OpenCode", "📊" to "Server", "📜" to "Commits"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
