@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -23,10 +24,20 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
         bottomNav = findViewById(R.id.bottomNav)
 
-        // Configurar ViewPager2
+        // Configurar ViewPager2 con animación de página
         pagerAdapter = AgentPagerAdapter(this, AgentConfig.AGENTS)
         viewPager.adapter = pagerAdapter
         viewPager.isUserInputEnabled = true
+
+        // PageTransformer para animación fluida entre agentes
+        viewPager.setPageTransformer { page, position ->
+            page.apply {
+                translationX = position * -width * 0.3f
+                alpha = 1f - (0.3f * kotlin.math.abs(position))
+                scaleX = 1f - (0.1f * kotlin.math.abs(position))
+                scaleY = 1f - (0.1f * kotlin.math.abs(position))
+            }
+        }
 
         // Sincronizar BottomNavigation con ViewPager
         bottomNav.setOnItemSelectedListener { item ->
@@ -49,12 +60,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // Título inicial
         updateTitle(0)
     }
 
     private fun updateTitle(position: Int) {
         val agent = AgentConfig.AGENTS[position]
+        val fragment = supportFragmentManager.findFragmentByTag("f$position")
+        val sessionCount = if (fragment is AgentFragment) fragment.getSessionCount() else 1
         title = "${agent.icon} ${agent.name}"
     }
 
@@ -71,6 +83,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_new_session -> {
+                addNewSessionToCurrentAgent()
+                true
+            }
             R.id.action_background_mode -> {
                 isBackgroundMode = !isBackgroundMode
                 item.isChecked = isBackgroundMode
@@ -82,14 +98,19 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.action_reload -> {
-                reloadCurrentAgent()
-                true
-            }
-            R.id.action_about -> {
-                // Placeholder para about dialog
+                reloadCurrentSession()
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun addNewSessionToCurrentAgent() {
+        val fragment = supportFragmentManager
+            .findFragmentByTag("f${viewPager.currentItem}")
+        if (fragment is AgentFragment) {
+            // El fragment ya tiene el botón "+" en los chips
+            // Mostramos el overlay de zoom como indicación
         }
     }
 
@@ -103,11 +124,11 @@ class MainActivity : AppCompatActivity() {
         stopService(serviceIntent)
     }
 
-    private fun reloadCurrentAgent() {
+    private fun reloadCurrentSession() {
         val fragment = supportFragmentManager
             .findFragmentByTag("f${viewPager.currentItem}")
         if (fragment is AgentFragment) {
-            fragment.reloadAgent()
+            fragment.reloadCurrentSession()
         }
     }
 

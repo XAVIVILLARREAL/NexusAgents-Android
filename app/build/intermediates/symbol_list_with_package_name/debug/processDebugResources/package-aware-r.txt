@@ -3108,6 +3108,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable zoom_overlay_bg
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3159,7 +3160,6 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
-id action_about
 id action_background_mode
 id action_bar
 id action_bar_activity_content
@@ -3177,6 +3177,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_new_session
 id action_reload
 id action_text
 id actions
@@ -3211,6 +3212,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnZoomIn
+id btnZoomOut
+id btnZoomReset
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3246,6 +3250,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id currentSessionLabel
 id currentState
 id custom
 id customPanel
@@ -3511,6 +3516,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sessionChips
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3612,7 +3618,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
-id webView
+id webViewContainer
 id west
 id withText
 id with_icon
@@ -3622,6 +3628,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id zoomOverlay
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration

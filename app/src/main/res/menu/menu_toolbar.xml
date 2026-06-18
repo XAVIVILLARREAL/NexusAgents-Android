@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_new_session"
+        android:title="Nueva sesión"
+        android:icon="@android:drawable/ic_input_add"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_reload"
         android:title="Recargar"
         android:icon="@android:drawable/ic_menu_rotate"
@@ -10,9 +15,5 @@
         android:id="@+id/action_background_mode"
         android:title="Modo Segundo Plano"
         android:checkable="true"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_about"
-        android:title="Acerca de"
         app:showAsAction="never" />
 </menu>
