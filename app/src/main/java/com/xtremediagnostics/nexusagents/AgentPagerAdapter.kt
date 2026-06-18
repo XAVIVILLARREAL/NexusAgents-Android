@@ -8,10 +8,8 @@ class AgentPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activ
 
     private val items = listOf(
         "deepseek" to { AgentFragment.newInstance(AgentConfig.AGENTS[0]) },
-        "gemini" to { AgentFragment.newInstance(AgentConfig.AGENTS[1]) },
-        "antigravity" to { AgentFragment.newInstance(AgentConfig.AGENTS[2]) },
-        "minimax" to { AgentFragment.newInstance(AgentConfig.AGENTS[3]) },
-        "codex" to { AgentFragment.newInstance(AgentConfig.AGENTS[4]) },
+        "antigravity" to { AgentFragment.newInstance(AgentConfig.AGENTS[1]) },
+        "codex" to { AgentFragment.newInstance(AgentConfig.AGENTS[2]) },
         "dashboard" to { DashboardFragment() },
         "commits" to { CommitsFragment() }
     )

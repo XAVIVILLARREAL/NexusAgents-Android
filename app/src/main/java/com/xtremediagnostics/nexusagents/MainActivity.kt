@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
     private var isBackgroundMode = false
 
     private val tabData = listOf(
-        "🧠" to "DeepSeek", "✨" to "Gemini", "🚀" to "Antigravity",
-        "⚡" to "Minimax", "💻" to "Codex", "📊" to "Server", "📜" to "Commits"
+        "🧠" to "DeepSeek", "🚀" to "Antigravity", "💻" to "Codex",
+        "📊" to "Server", "📜" to "Commits"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

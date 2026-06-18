@@ -75,8 +75,6 @@ id nav_codex
 id nav_commits
 id nav_dashboard
 id nav_deepseek
-id nav_gemini
-id nav_minimax
 id progressBar
 id ramBar
 id ramText
