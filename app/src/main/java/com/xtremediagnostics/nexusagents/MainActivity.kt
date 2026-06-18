@@ -1,10 +1,13 @@
 package com.xtremediagnostics.nexusagents
 
+import android.app.PictureInPictureParams
 import android.content.Intent
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
+import android.util.Rational
 import android.view.Menu
 import android.view.MenuItem
-import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -24,118 +27,94 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
         bottomNav = findViewById(R.id.bottomNav)
 
-        // Configurar ViewPager2 con animación de página
-        pagerAdapter = AgentPagerAdapter(this, AgentConfig.AGENTS)
+        pagerAdapter = AgentPagerAdapter(this)
         viewPager.adapter = pagerAdapter
         viewPager.isUserInputEnabled = true
+        viewPager.offscreenPageLimit = 1
 
-        // PageTransformer para animación fluida entre agentes
         viewPager.setPageTransformer { page, position ->
             page.apply {
-                translationX = position * -width * 0.3f
-                alpha = 1f - (0.3f * kotlin.math.abs(position))
-                scaleX = 1f - (0.1f * kotlin.math.abs(position))
-                scaleY = 1f - (0.1f * kotlin.math.abs(position))
+                translationX = position * -width * 0.25f
+                alpha = 1f - (0.25f * kotlin.math.abs(position))
             }
         }
 
-        // Sincronizar BottomNavigation con ViewPager
         bottomNav.setOnItemSelectedListener { item ->
-            val position = when (item.itemId) {
-                R.id.nav_deepseek -> 0
-                R.id.nav_gemini -> 1
-                R.id.nav_antigravity -> 2
-                R.id.nav_minimax -> 3
-                R.id.nav_codex -> 4
+            val pos = when (item.itemId) {
+                R.id.nav_deepseek -> 0; R.id.nav_gemini -> 1
+                R.id.nav_antigravity -> 2; R.id.nav_minimax -> 3
+                R.id.nav_codex -> 4; R.id.nav_dashboard -> 5
                 else -> 0
             }
-            viewPager.setCurrentItem(position, true)
+            viewPager.setCurrentItem(pos, true)
             true
         }
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                bottomNav.menu.getItem(position).isChecked = true
-                updateTitle(position)
+            override fun onPageSelected(pos: Int) {
+                if (pos < bottomNav.menu.size()) bottomNav.menu.getItem(pos).isChecked = true
+                updateTitle(pos)
             }
         })
 
         updateTitle(0)
     }
 
-    private fun updateTitle(position: Int) {
-        val agent = AgentConfig.AGENTS[position]
-        val fragment = supportFragmentManager.findFragmentByTag("f$position")
-        val sessionCount = if (fragment is AgentFragment) fragment.getSessionCount() else 1
-        title = "${agent.icon} ${agent.name}"
+    private fun updateTitle(pos: Int) {
+        val titles = listOf("🧠 DeepSeek","✨ Gemini","🚀 Antigravity","⚡ Minimax","💻 Codex","📊 Server")
+        if (pos < titles.size) title = titles[pos]
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
-        return true
-    }
+    override fun onCreateOptionsMenu(menu: Menu) = menuInflater.inflate(R.menu.menu_toolbar, menu).let { true }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        val bgItem = menu.findItem(R.id.action_background_mode)
-        bgItem?.isChecked = isBackgroundMode
+        menu.findItem(R.id.action_background_mode)?.isChecked = isBackgroundMode
+        menu.findItem(R.id.action_pip)?.isVisible = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
         return super.onPrepareOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_new_session -> {
-                addNewSessionToCurrentAgent()
-                true
-            }
-            R.id.action_background_mode -> {
-                isBackgroundMode = !isBackgroundMode
-                item.isChecked = isBackgroundMode
-                if (isBackgroundMode) {
-                    startBackgroundMode()
-                } else {
-                    stopBackgroundMode()
-                }
-                true
-            }
-            R.id.action_reload -> {
-                reloadCurrentSession()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_pip -> { enterPipMode(); true }
+        R.id.action_background_mode -> {
+            isBackgroundMode = !isBackgroundMode; item.isChecked = isBackgroundMode
+            if (isBackgroundMode) startBackgroundMode() else stopBackgroundMode()
+            true
+        }
+        R.id.action_reload -> { reloadCurrentFragment(); true }
+        else -> super.onOptionsItemSelected(item)
+    }
+
+    private fun enterPipMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val params = PictureInPictureParams.Builder()
+                .setAspectRatio(Rational(16, 9))
+                .build()
+            enterPictureInPictureMode(params)
         }
     }
 
-    private fun addNewSessionToCurrentAgent() {
-        val fragment = supportFragmentManager
-            .findFragmentByTag("f${viewPager.currentItem}")
-        if (fragment is AgentFragment) {
-            // El fragment ya tiene el botón "+" en los chips
-            // Mostramos el overlay de zoom como indicación
+    override fun onPictureInPictureModeChanged(isInPip: Boolean, config: Configuration) {
+        super.onPictureInPictureModeChanged(isInPip, config)
+        if (isInPip) {
+            // Ocultar UI superflua en PiP
+            bottomNav.visibility = android.view.View.GONE
+        } else {
+            bottomNav.visibility = android.view.View.VISIBLE
         }
     }
 
     private fun startBackgroundMode() {
-        val serviceIntent = Intent(this, AgentForegroundService::class.java)
-        ContextCompat.startForegroundService(this, serviceIntent)
+        ContextCompat.startForegroundService(this, Intent(this, AgentForegroundService::class.java))
     }
-
     private fun stopBackgroundMode() {
-        val serviceIntent = Intent(this, AgentForegroundService::class.java)
-        stopService(serviceIntent)
+        stopService(Intent(this, AgentForegroundService::class.java))
     }
-
-    private fun reloadCurrentSession() {
-        val fragment = supportFragmentManager
-            .findFragmentByTag("f${viewPager.currentItem}")
-        if (fragment is AgentFragment) {
-            fragment.reloadCurrentSession()
-        }
+    private fun reloadCurrentFragment() {
+        val frag = supportFragmentManager.findFragmentByTag("f${viewPager.currentItem}")
+        if (frag is AgentFragment) frag.reloadCurrentSession()
     }
-
     override fun onDestroy() {
-        if (isBackgroundMode) {
-            stopBackgroundMode()
-        }
+        if (isBackgroundMode) stopBackgroundMode()
         super.onDestroy()
     }
 }

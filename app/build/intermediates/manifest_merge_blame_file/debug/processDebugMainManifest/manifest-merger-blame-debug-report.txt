@@ -44,7 +44,7 @@
 27-->[androidx.core:core:1.10.1] C:\Users\javir\.gradle\caches\8.13\transforms\9f73cdcfd9761e402d50dc37aa70e65f\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
 28
 29    <application
-29-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-43:19
+29-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-44:19
 30        android:name="com.xtremediagnostics.nexusagents.NexusAgentsApp"
 30-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:17:9-39
 31        android:allowBackup="true"
@@ -66,115 +66,117 @@
 40        android:usesCleartextTraffic="true" >
 40-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:24:9-44
 41        <activity
-41-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:26:9-35:20
+41-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:26:9-36:20
 42            android:name="com.xtremediagnostics.nexusagents.MainActivity"
 42-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:27:13-41
-43            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-43-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:29:13-87
+43            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|smallestScreenSize"
+43-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:29:13-106
 44            android:exported="true"
 44-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:28:13-36
-45            android:theme="@style/Theme.NexusAgents" >
-45-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:30:13-53
-46            <intent-filter>
-46-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:31:13-34:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:17-69
-47-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:17-77
-49-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:27-74
-50            </intent-filter>
-51        </activity>
-52
-53        <!-- Foreground Service para mantener agentes activos en segundo plano -->
-54        <service
-54-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:38:9-41:58
-55            android:name="com.xtremediagnostics.nexusagents.AgentForegroundService"
-55-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:39:13-51
-56            android:exported="false"
-56-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:40:13-37
-57            android:foregroundServiceType="specialUse" />
-57-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:41:13-55
-58
-59        <provider
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-60            android:name="androidx.startup.InitializationProvider"
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-61            android:authorities="com.xtremediagnostics.nexusagents.androidx-startup"
-61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-62            android:exported="false" >
-62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-63            <meta-data
-63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-64                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-65                android:value="androidx.startup" />
-65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-66            <meta-data
-66-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-67                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-67-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-68                android:value="androidx.startup" />
-68-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-69            <meta-data
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-70                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-71                android:value="androidx.startup" />
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-72        </provider>
-73
-74        <uses-library
-74-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-75            android:name="androidx.window.extensions"
-75-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-76            android:required="false" />
-76-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-77        <uses-library
-77-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-78            android:name="androidx.window.sidecar"
-78-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-79            android:required="false" />
-79-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-80
-81        <receiver
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-82            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-83            android:directBootAware="false"
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-84            android:enabled="true"
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-85            android:exported="true"
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-86            android:permission="android.permission.DUMP" >
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-87            <intent-filter>
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-88                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-89            </intent-filter>
-90            <intent-filter>
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-91                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-92            </intent-filter>
-93            <intent-filter>
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-94                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-95            </intent-filter>
-96            <intent-filter>
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-97                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-98            </intent-filter>
-99        </receiver>
-100    </application>
-101
-102</manifest>
+45            android:supportsPictureInPicture="true"
+45-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:30:13-52
+46            android:theme="@style/Theme.NexusAgents" >
+46-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:31:13-53
+47            <intent-filter>
+47-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:13-35:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:17-69
+48-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:34:17-77
+50-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:34:27-74
+51            </intent-filter>
+52        </activity>
+53
+54        <!-- Foreground Service para mantener agentes activos en segundo plano -->
+55        <service
+55-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:39:9-42:58
+56            android:name="com.xtremediagnostics.nexusagents.AgentForegroundService"
+56-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:40:13-51
+57            android:exported="false"
+57-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:41:13-37
+58            android:foregroundServiceType="specialUse" />
+58-->C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:42:13-55
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+62            android:authorities="com.xtremediagnostics.nexusagents.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+64            <meta-data
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+66                android:value="androidx.startup" />
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\javir\.gradle\caches\8.13\transforms\13ec70010723808d0b4cbed2ff36ed62\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\javir\.gradle\caches\8.13\transforms\bba519e34021ff578229c0ee6b4b1b26\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+70            <meta-data
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+72                android:value="androidx.startup" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+73        </provider>
+74
+75        <uses-library
+75-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+76            android:name="androidx.window.extensions"
+76-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+77            android:required="false" />
+77-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+78        <uses-library
+78-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+79            android:name="androidx.window.sidecar"
+79-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+80            android:required="false" />
+80-->[androidx.window:window:1.0.0] C:\Users\javir\.gradle\caches\8.13\transforms\6e43923e5d4e8ae5f60cf1d7a4cd2221\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+81
+82        <receiver
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+83            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+84            android:directBootAware="false"
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+85            android:enabled="true"
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+86            android:exported="true"
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+87            android:permission="android.permission.DUMP" >
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+89                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+92                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+93            </intent-filter>
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+95                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+96            </intent-filter>
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+98                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\javir\.gradle\caches\8.13\transforms\9b9878cd8bbbd472c2b3600458afb725\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+99            </intent-filter>
+100        </receiver>
+101    </application>
+102
+103</manifest>

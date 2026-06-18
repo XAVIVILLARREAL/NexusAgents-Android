@@ -3049,6 +3049,8 @@ drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_codex
+drawable ic_copy
+drawable ic_dashboard
 drawable ic_deepseek
 drawable ic_gemini
 drawable ic_keyboard_black_24dp
@@ -3063,6 +3065,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notes
+drawable ic_paste
+drawable ic_pip
 drawable ic_search_black_24
 drawable ic_zoom_in
 drawable ic_zoom_out
@@ -3213,7 +3217,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_new_session
+id action_pip
 id action_reload
 id action_text
 id actions
@@ -3248,7 +3252,10 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnCopy
 id btnNotes
+id btnPaste
+id btnRefresh
 id btnZoomIn
 id btnZoomOut
 id btnZoomReset
@@ -3457,6 +3464,7 @@ id multiply
 id nav_antigravity
 id nav_codex
 id nav_controller_view_tag
+id nav_dashboard
 id nav_deepseek
 id nav_gemini
 id nav_host_fragment_container
@@ -3518,6 +3526,8 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id ramBar
+id ramText
 id ratio
 id rectangles
 id report_drawn
@@ -3588,6 +3598,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statusCards
 id statusLabel
 id stop
 id stretch
@@ -3644,6 +3655,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id uptimeText
 id useLogo
 id vertical_only
 id viewPager
@@ -3803,6 +3815,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_agent
+layout fragment_dashboard
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

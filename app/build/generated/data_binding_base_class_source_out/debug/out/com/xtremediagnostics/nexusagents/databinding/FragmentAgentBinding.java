@@ -28,7 +28,13 @@ public final class FragmentAgentBinding implements ViewBinding {
   public final View accentBar;
 
   @NonNull
+  public final ImageButton btnCopy;
+
+  @NonNull
   public final ImageButton btnNotes;
+
+  @NonNull
+  public final ImageButton btnPaste;
 
   @NonNull
   public final ImageButton btnZoomIn;
@@ -67,15 +73,18 @@ public final class FragmentAgentBinding implements ViewBinding {
   public final SeekBar zoomSlider;
 
   private FragmentAgentBinding(@NonNull LinearLayout rootView, @NonNull View accentBar,
-      @NonNull ImageButton btnNotes, @NonNull ImageButton btnZoomIn,
-      @NonNull ImageButton btnZoomOut, @NonNull ImageButton btnZoomReset,
-      @NonNull ProgressBar progressBar, @NonNull ChipGroup sessionChips,
-      @NonNull TextView statusLabel, @NonNull FrameLayout webViewContainer,
-      @NonNull LinearLayout zoomBar, @NonNull TextView zoomLabel, @NonNull TextView zoomPreset100,
-      @NonNull TextView zoomPreset150, @NonNull SeekBar zoomSlider) {
+      @NonNull ImageButton btnCopy, @NonNull ImageButton btnNotes, @NonNull ImageButton btnPaste,
+      @NonNull ImageButton btnZoomIn, @NonNull ImageButton btnZoomOut,
+      @NonNull ImageButton btnZoomReset, @NonNull ProgressBar progressBar,
+      @NonNull ChipGroup sessionChips, @NonNull TextView statusLabel,
+      @NonNull FrameLayout webViewContainer, @NonNull LinearLayout zoomBar,
+      @NonNull TextView zoomLabel, @NonNull TextView zoomPreset100, @NonNull TextView zoomPreset150,
+      @NonNull SeekBar zoomSlider) {
     this.rootView = rootView;
     this.accentBar = accentBar;
+    this.btnCopy = btnCopy;
     this.btnNotes = btnNotes;
+    this.btnPaste = btnPaste;
     this.btnZoomIn = btnZoomIn;
     this.btnZoomOut = btnZoomOut;
     this.btnZoomReset = btnZoomReset;
@@ -123,9 +132,21 @@ public final class FragmentAgentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnCopy;
+      ImageButton btnCopy = ViewBindings.findChildViewById(rootView, id);
+      if (btnCopy == null) {
+        break missingId;
+      }
+
       id = R.id.btnNotes;
       ImageButton btnNotes = ViewBindings.findChildViewById(rootView, id);
       if (btnNotes == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPaste;
+      ImageButton btnPaste = ViewBindings.findChildViewById(rootView, id);
+      if (btnPaste == null) {
         break missingId;
       }
 
@@ -201,9 +222,9 @@ public final class FragmentAgentBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAgentBinding((LinearLayout) rootView, accentBar, btnNotes, btnZoomIn,
-          btnZoomOut, btnZoomReset, progressBar, sessionChips, statusLabel, webViewContainer,
-          zoomBar, zoomLabel, zoomPreset100, zoomPreset150, zoomSlider);
+      return new FragmentAgentBinding((LinearLayout) rootView, accentBar, btnCopy, btnNotes,
+          btnPaste, btnZoomIn, btnZoomOut, btnZoomReset, progressBar, sessionChips, statusLabel,
+          webViewContainer, zoomBar, zoomLabel, zoomPreset100, zoomPreset150, zoomSlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

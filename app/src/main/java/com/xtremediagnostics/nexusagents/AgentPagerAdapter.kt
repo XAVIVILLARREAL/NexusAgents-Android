@@ -4,16 +4,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class AgentPagerAdapter(
-    activity: FragmentActivity,
-    private val agents: List<AgentConfig>
-) : FragmentStateAdapter(activity) {
+class AgentPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 
-    override fun getItemCount(): Int = agents.size
+    private val items = listOf(
+        "deepseek" to { AgentFragment.newInstance(AgentConfig.AGENTS[0]) },
+        "gemini" to { AgentFragment.newInstance(AgentConfig.AGENTS[1]) },
+        "antigravity" to { AgentFragment.newInstance(AgentConfig.AGENTS[2]) },
+        "minimax" to { AgentFragment.newInstance(AgentConfig.AGENTS[3]) },
+        "codex" to { AgentFragment.newInstance(AgentConfig.AGENTS[4]) },
+        "dashboard" to { DashboardFragment() }
+    )
 
-    override fun createFragment(position: Int): Fragment {
-        return AgentFragment.newInstance(agents[position])
-    }
-
-    fun getAgent(position: Int): AgentConfig = agents[position]
+    override fun getItemCount() = items.size
+    override fun createFragment(position: Int) = items[position].second()
 }

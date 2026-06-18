@@ -69,6 +69,7 @@ class AgentFragment : Fragment() {
         accentBar?.setBackgroundColor(agent.accentColor.toInt())
         setupZoomControls(v)
         setupNotesButton(v)
+        setupCopyPaste(v)
         setupSessionChips()
         switchToSession(sessionManager.sessions[0].id, false)
         return v
@@ -160,6 +161,37 @@ class AgentFragment : Fragment() {
     }
 
     private fun toast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+
+    // =====================================================================
+    // COPY / PASTE
+    // =====================================================================
+    private fun setupCopyPaste(root: View) {
+        root.findViewById<ImageButton>(R.id.btnCopy)?.setOnClickListener {
+            webViewCache[currentSessionId]?.evaluateJavascript(
+                "(function(){var s=window.getSelection().toString();if(!s)s=document.body.innerText.substring(0,500);return s;})()"
+            ) { result ->
+                val text = result?.trim('"')?.take(2000) ?: ""
+                if (text.isNotBlank()) {
+                    val clip = android.content.ClipData.newPlainText("terminal", text)
+                    (requireContext().getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager)
+                        .setPrimaryClip(clip)
+                    toast("Copiado")
+                }
+            }
+        }
+        root.findViewById<ImageButton>(R.id.btnPaste)?.setOnClickListener {
+            val clip = (requireContext().getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager).primaryClip
+            if (clip != null && clip.itemCount > 0) {
+                val text = clip.getItemAt(0).text.toString()
+                // Enviar texto al terminal vía pegado en el WebView
+                webViewCache[currentSessionId]?.evaluateJavascript(
+                    "var e=document.activeElement||document.body;if(e&&e.value!=null){e.value+='${text.replace("'","\\'")}';e.dispatchEvent(new Event('input',{bubbles:true}))}else{document.execCommand('insertText',false,'${text.replace("'","\\'")}')}",
+                    null
+                )
+                toast("Pegado")
+            }
+        }
+    }
 
     // =====================================================================
     // SESSION MANAGEMENT

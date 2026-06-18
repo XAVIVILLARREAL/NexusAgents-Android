@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:2:1-46:12
 MERGED from [androidx.databinding:viewbinding:8.13.0] C:\Users\javir\.gradle\caches\8.13\transforms\376d255e282ce64ca465b781b1f64b75\transformed\viewbinding-8.13.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] C:\Users\javir\.gradle\caches\8.13\transforms\6623bd1854f6643b700bcb5310e7b5cd\transformed\navigation-common-2.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] C:\Users\javir\.gradle\caches\8.13\transforms\f98896a356e591823ba5372d9235b2e8\transformed\navigation-common-ktx-2.6.0\AndroidManifest.xml:17:1-22:12
@@ -96,8 +96,8 @@ ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\Android
 	android:name
 		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:14:22-65
 application
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-43:19
-INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-43:19
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-44:19
+INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:16:5-44:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\javir\.gradle\caches\8.13\transforms\6d73019bf234a8871eb0a6d6582a2acb\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\javir\.gradle\caches\8.13\transforms\6d73019bf234a8871eb0a6d6582a2acb\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\javir\.gradle\caches\8.13\transforms\8e4a8cc4ead57752bc1e782913e067cc\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -137,33 +137,35 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\javir\.gradle\cach
 	android:name
 		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:17:9-39
 activity#com.xtremediagnostics.nexusagents.MainActivity
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:26:9-35:20
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:26:9-36:20
 	android:exported
 		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:28:13-36
+	android:supportsPictureInPicture
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:30:13-52
 	android:configChanges
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:29:13-87
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:29:13-106
 	android:theme
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:30:13-53
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:31:13-53
 	android:name
 		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:27:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:31:13-34:29
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:17-77
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:33:27-74
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:34:27-74
 service#com.xtremediagnostics.nexusagents.AgentForegroundService
-ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:38:9-41:58
+ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:39:9-42:58
 	android:exported
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:40:13-37
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:41:13-37
 	android:foregroundServiceType
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:41:13-55
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:42:13-55
 	android:name
-		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:39:13-51
+		ADDED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml:40:13-51
 uses-sdk
 INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\javir\AndroidStudioProjects\NexusAgents\app\src\main\AndroidManifest.xml
